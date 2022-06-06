@@ -4,6 +4,8 @@
 let date
 let randomDate
 
+const root = document.querySelector(':root')
+
 const apodButton = document.querySelector('[name="apodButton"]')
 let url = `https://api.nasa.gov/planetary/apod?api_key=${key}`
 const bg = document.querySelector('#bg')
@@ -30,7 +32,8 @@ const wipe = () => {
 const blastOff = data => {
 	if(data.media_type === 'image'){
         const nasaBg = data.hdurl
-		bg.style.backgroundImage = "url("+nasaBg+")"
+		// bg.style.backgroundImage = "url("+nasaBg+")"
+        root.style.setProperty('--nasa-url', `url(${nasaBg})`)
 	}else if(data.media_type === 'video'){
 		bg.classList.add('video')
 		bg.innerHTML = `<iframe class="iframe" src="${data.url}" frameborder="0"></iframe>`

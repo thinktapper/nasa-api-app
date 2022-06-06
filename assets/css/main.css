@@ -1,5 +1,10 @@
 @import 'fontawesome-all.min.css';
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+
+:root {
+  --nasa-url: url('https://api.nasa.gov/planetary/apod?api_key=RDkiDaYBKz708OfvEebUAc1V5eW5kvqwVNamsfpV');
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -1015,7 +1020,8 @@ button {
   transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
   transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
   transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
-  background-image: url("../../images/bg.jpg");
+  /* background-image: url("../../images/bg.jpg"); */
+  background-image: var(--nasa-url);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1438,6 +1444,9 @@ body.is-preload #footer {
 }
 
 /* Blast Off */
+/* .bg-modifier #bg::after{
+  background-image: ;
+} */
 .video {
   height: 100vh;
   width: 100%;
