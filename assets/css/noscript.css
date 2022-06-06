@@ -1,17 +1,37 @@
-/* Wrapper */
-#wrapper {
-  opacity: 1 !important;
-}
+/*
+	Dimension by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+*/
 
-/* Overlay */
-#overlay {
-  opacity: 1 !important;
-}
+/* BG */
+
+	body.is-preload #bg:before {
+		background-color: transparent;
+	}
 
 /* Header */
-#header {
-  opacity: 1 !important;
-}
-#header nav li {
-  opacity: 1 !important;
-}/*# sourceMappingURL=noscript.css.map */
+
+	body.is-preload #header {
+		-moz-filter: none;
+		-webkit-filter: none;
+		-ms-filter: none;
+		filter: none;
+	}
+
+		body.is-preload #header > * {
+			opacity: 1;
+		}
+
+		body.is-preload #header .content .inner {
+			max-height: none;
+			padding: 3rem 2rem;
+			opacity: 1;
+		}
+
+/* Main */
+
+	#main article {
+		opacity: 1;
+		margin: 4rem 0 0 0;
+	}
