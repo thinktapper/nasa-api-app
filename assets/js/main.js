@@ -443,8 +443,11 @@ const wipe = () => {
 const blastOff = data => {
 	if(data.media_type === 'image'){
         const nasaBg = data.hdurl
-		// bg.style.backgroundImage = "url("+nasaBg+")"
         root.style.setProperty('--nasa-url', `url(${nasaBg})`)
+
+		// TODO -> fetch other relevant images
+		document.querySelector('.thumbnail').innerHTML = `<img src="${data.url}" alt="${data.title}">`
+		document.querySelector('.descriptionImg').innerHTML = `<img src="${data.url}" alt="${data.title}">`
 	}else if(data.media_type === 'video'){
 		bg.classList.add('video')
 		bg.innerHTML = `<iframe class="iframe" src="${data.url}" frameborder="0"></iframe>`

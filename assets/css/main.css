@@ -71,6 +71,19 @@ input, select, textarea {
   appearance: none;
 }
 
+button, input, .descriptionButton {
+  border: none;
+  padding: .25rem;
+  background:rgba(14, 14, 14, 0.363);
+  text-transform: uppercase;
+  color: white;
+  width: 150px;
+  height: 50px;
+  border-radius: .25rem;
+  font-size: .8rem;
+  color-scheme: dark;
+}
+
 /* Basic */
 @-ms-viewport {
   width: device-width;
