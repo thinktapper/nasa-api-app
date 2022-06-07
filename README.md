@@ -1,1 +1,21 @@
-# NASA API App
+# 🛰 NASA's Astronomy Picture of the Day
+Using the NASA Astronomy Picture of the Day <a href="https://github.com/nasa/apod-api">API</a>, this web app provides a new picture and explanation everyday. View NASA's APOD either by selecting a date or get surprised with a random one from history. Explore all of the informative descriptions, beautiful images, and breathtaking videos.
+
+**Link to live site:** [Visit the NASA Dimension](#) to see NASA's picture of the day.
+
+![alt tag](http://placecorgi.com/1200/650)
+
+## How It's Made:
+
+**Tech used:** HTML, CSS, and JavaScript
+
+Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write *something*. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
+
+## Optimizations
+*(optional)*
+
+You don't have to include this section but interviewers *love* that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+
+## Lessons Learned:
+
+No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those *whoa this is awesome* or *fuck yeah I did it!* moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
