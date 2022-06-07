@@ -445,13 +445,13 @@ const blastOff = data => {
         const nasaBg = data.hdurl
         root.style.setProperty('--nasa-url', `url(${nasaBg})`)
 
-		// TODO -> fetch other relevant images
 		document.querySelector('.thumbnail').innerHTML = `<img src="${data.url}" alt="${data.title}">`
 		document.querySelector('.descriptionImg').innerHTML = `<img src="${data.url}" alt="${data.title}">`
 	}else if(data.media_type === 'video'){
+		const vid = `${data.url}?background=1`
 		bg.classList.add('video')
-		bg.innerHTML = `<iframe class="iframe" src="${data.url}" frameborder="0"></iframe>`
-	}
+		bg.innerHTML = `<iframe class="iframe" src="${vid}" frameborder="0" allow=autoplay></iframe>`
+	} // TODO -> Make video autoplay in background (overlay? vimeo?)
 }
 
 // Append description to DOM
