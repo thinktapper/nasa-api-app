@@ -71,7 +71,7 @@ input, select, textarea {
   appearance: none;
 }
 
-button, input, .descriptionButton {
+input {
   border: none;
   padding: .25rem;
   background:rgba(14, 14, 14, 0.363);
@@ -81,8 +81,26 @@ button, input, .descriptionButton {
   height: 50px;
   border-radius: .25rem;
   font-size: .8rem;
+  margin-right: 1rem;
   color-scheme: dark;
 }
+
+input::placeholder{
+  color: transparent;
+}
+input[type="date"]::before{
+  color: #ffffff;
+}
+input[type="date"]:focus::before {
+  content: "" !important;
+}
+
+/* Image container */
+.container {
+  background: radial-gradient(#19191900 50%,#191919 70%, #191919 100%);
+  padding: 1rem;
+}
+
 
 /* Basic */
 @-ms-viewport {
@@ -126,6 +144,20 @@ html {
   html {
     font-size: 11pt;
   }
+  input, button {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .container{
+    background: transparent;
+  }
+  .container::after {
+    mix-blend-mode: normal;
+    background: linear-gradient(180deg,#19191900,#191919);
+  }
+  input[type="date"]::before{
+    content: "Date: "
+  }
 }
 @media screen and (max-width: 360px) {
   html {
@@ -162,7 +194,7 @@ em, i {
 }
 
 p {
-  margin: 0 0 2rem 0;
+  margin: 2rem 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -399,6 +431,11 @@ textarea:focus {
   border-color: #ffffff;
   -webkit-box-shadow: 0 0 0 1px #ffffff;
           box-shadow: 0 0 0 1px #ffffff;
+}
+
+small {
+  font-size: .75rem;
+  margin: 0 0 2.5rem 0;
 }
 
 select {
@@ -642,7 +679,7 @@ input[type=radio] + label:before {
 }
 .image.main {
   display: block;
-  margin: 2.5rem 0;
+  margin: 2.5rem 0 0 0;
   width: 100%;
 }
 .image.main img {

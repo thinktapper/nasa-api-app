@@ -27,6 +27,7 @@
 			// NASA
 			// Show most recent APOD on load
 			today();
+			randThumbs();
 		});
 
 	// Fix: Flexbox min-height bug on IE.
@@ -409,6 +410,7 @@ const root = document.querySelector(':root')
 const apodButton = document.querySelector('[name="apodButton"]')
 const randButton = document.querySelector('[name="random"]')
 let url = `https://api.nasa.gov/planetary/apod?api_key=${key}`
+const libUrl = ``
 const bg = document.querySelector('#bg')
 const description = document.querySelector('.description')
 const title = document.querySelector('.apodTitle')
@@ -421,8 +423,6 @@ const genRandomDate = () => {
     const timestamp = Math.floor(Math.random() * maxDate)
     let rando = new Date(timestamp).toLocaleDateString('en-CA')
     return rando
-    // let formattedDate = `${rando[2]}-${rando[0]}-${rando[1]}`
-    // return formattedDate
 }
 
 // Clear prev media and info
@@ -484,6 +484,17 @@ const today = () => {
 		.then((data)=>{
 			blastOff(data)
 			showInfo(data)
+		})
+		.catch((err)=> console.log(`error ${err}`))
+}
+
+const randThumbs = () => {
+	randomDate = genRandomDate()
+	fetch(`${url}`+`&date=${randomDate}`)
+		.then((res)=> res.json())
+		.then((data)=>{
+			document.querySelector('.library').innerHTML = `<img src="${data.url}" alt="${data.title}">`
+			document.querySelector('.libTitle').innerText = `${data.date}  •  ${data.title}`
 		})
 		.catch((err)=> console.log(`error ${err}`))
 }
