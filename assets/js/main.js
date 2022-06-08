@@ -421,8 +421,7 @@ const randomInfo = document.querySelector('.randomInfo')
 const genRandomDate = () => {
     const maxDate = Date.now()
     const timestamp = Math.floor(Math.random() * maxDate)
-    let rando = new Date(timestamp).toLocaleDateString('en-CA')
-    return rando
+	return new Date(timestamp).toLocaleDateString('en-CA')
 }
 
 // Clear prev media and info
@@ -476,7 +475,7 @@ randButton.addEventListener('click', ()=>{
     aDay(randomDate)
     // Display random date generated
     randomInfo.innerText = randomDate
-})
+}) // TODO -> If no entry for date, display message saying so
 
 const today = () => {
 	fetch(url)
@@ -493,6 +492,7 @@ const randThumbs = () => {
 	fetch(`${url}`+`&date=${randomDate}`)
 		.then((res)=> res.json())
 		.then((data)=>{
+			// TODO -> Limit random thumb date range
 			document.querySelector('.library').innerHTML = `<img src="${data.url}" alt="${data.title}">`
 			document.querySelector('.libTitle').innerText = `${data.date}  •  ${data.title}`
 		})
