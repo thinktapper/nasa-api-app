@@ -493,7 +493,13 @@ const randThumbs = () => {
 	fetch(`${url}`+`&date=${randomDate}`)
 		.then((res)=> res.json())
 		.then((data)=>{
-			document.querySelector('.library').innerHTML = `<img src="${data.url}" alt="${data.title}">`
+			if(data.media_type === 'image'){
+				document.querySelector('.library').innerHTML = `<img src="${data.url}" alt="${data.title}">`
+			}else if(data.media_type === 'video'){
+				const vid = `${data.url}?autoplay=1&mute=1&enable_js=1`
+				document.querySelector('iframe').classList.remove('hidden')
+				document.querySelector('iframe').src = `${vid}`
+			}
 			document.querySelector('.libTitle').innerText = `${data.date}  •  ${data.title}`
 		})
 		.catch((err)=> console.log(`error ${err}`))
