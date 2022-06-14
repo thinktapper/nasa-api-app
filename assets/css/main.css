@@ -1494,9 +1494,9 @@ body.is-preload #footer {
 }
 
 /* Blast Off */
-/* .bg-modifier #bg::after{
-  background-image: ;
-} */
+.intro {
+  padding: 1rem 0 0.5rem 0;
+}
 .video {
   height: 100vh;
   width: 100%;
