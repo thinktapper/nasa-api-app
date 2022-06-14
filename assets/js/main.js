@@ -419,8 +419,9 @@ const randomInfo = document.querySelector('.randomInfo')
 
 // Construct random date
 const genRandomDate = () => {
+	const minDate = Date.parse('1995-06-16')
     const maxDate = Date.now()
-    const timestamp = Math.floor(Math.random() * maxDate)
+    const timestamp = Math.floor(Math.random() * (maxDate - minDate + 1) + minDate)
 	return new Date(timestamp).toLocaleDateString('en-CA')
 }
 
@@ -492,7 +493,6 @@ const randThumbs = () => {
 	fetch(`${url}`+`&date=${randomDate}`)
 		.then((res)=> res.json())
 		.then((data)=>{
-			// TODO -> Limit random thumb date range
 			document.querySelector('.library').innerHTML = `<img src="${data.url}" alt="${data.title}">`
 			document.querySelector('.libTitle').innerText = `${data.date}  •  ${data.title}`
 		})
